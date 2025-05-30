@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>資料來源</title>
+    <style>
+        :root {
+            --bg-color: #0d1217;
+            --text-color: #f4f4f4;
+            --accent-color: #f4d03f;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body.light {
+            --bg-color: #ffffff;
+            --text-color: #222;
+            --accent-color: #0078d7;
+            --card-bg: #f2f2f2;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        li {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            backdrop-filter: blur(2px);
+            transition: transform 0.2s ease;
+            animation: fadeIn 0.6s ease;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .controls {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeIn 1s ease;
+        }
+
+        button {
+            padding: 10px 16px;
+            font-size: 16px;
+            border: 2px solid var(--accent-color);
+            background-color: transparent;
+            color: var(--text-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controls">
+        <button onclick="location.href='index.html'">返回首頁</button>
+        <button onclick="toggleTheme()">切換夜間 / 日間模式</button>
+    </div>
+
+    <h1>資料來源</h1>
+
+    <ul>
+        <li><a href="https://zh.pngtree.com/" target="_blank">登入圖片</a></li>
+        <li><a href="https://yas.io/hk/blog/" target="_blank">火車圖片</a></li>
+        <li><a href="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/gobytime" target="_blank">鐵路時刻表</a></li>
+        <!-- 可繼續新增更多資料來源 -->
+    </ul>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("light");
+        }
+    </script>
+</body>
+
+</html>

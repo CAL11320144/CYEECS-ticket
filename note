@@ -1,0 +1,11 @@
+EECS-TICKETING-SYSTEM/ 
+├── public/              # 靜態前端檔案
+│   ├── 分離資料.html 
+│   ├── style.css
+│   └── 分離資料.js 
+├── server.js 
+
+├── data                  
+│   └── eecsDB.js 
+
+├── package.json

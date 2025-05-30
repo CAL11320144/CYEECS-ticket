@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂票系統_EECS出品</title>
+    <meta name="google-site-verification" content="NN3_B2o5SVPXWSOL6h-cxgzYUPqr-URSiUjot2vA_cs" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>「我沒有醉」鐵路有限公司</h1>
+        <nav>
+            <ul>
+                <li><a href="https://eecs.cycu.edu.tw/">開發團隊</a></li>
+                <li><a href="https://people.debian.org/~paulliu/ROCid.html">隨機生成</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">免費票券</a></li>
+                <li><a href="資料來源.html">資料來源</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="mobileMenu" class="mobile-menu hidden">
+            <li><a href="https://eecs.cycu.edu.tw/">開發團隊</a></li>
+            <li><a href="https://people.debian.org/~paulliu/ROCid.html">隨機生成</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">免費票券</a></li>
+            <li><a href="資料來源.html">資料來源</a></li>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login">
+            <h2 class="fade-in delay-1">歡迎搭乘「我沒有醉」鐵路公司</h2>
+            <h3 class="fade-in delay-2">我們的宗旨是用最舒服的方式讓您快速度過旅程</h3>
+            <h3 class="fade-in delay-3">為了服務您，請您先登入</h3>
+
+            <form class="fade-in delay-4" onsubmit="return false">
+                <div class="input-group">
+                    <input type="text" id="userId" required placeholder=" ">
+                    <label for="userId">帳號</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="userPw" required placeholder=" ">
+                    <label for="userPw">密碼</label>
+                </div>
+
+                <div class="button-row">
+                    <button onclick="register();scrollToTop()">
+                        <span class="btn-icon">🚂</span> 註冊
+                    </button>
+                    <button onclick="login();scrollToTop()">
+                        <span class="btn-icon">🚂</span> 登入
+                    </button>
+                </div>
+            </form>
+
+            <div class="particles"></div>
+        </section>
+        <section class="operation hidden">
+            <div id="userPanel" style="display:none">
+                <h3 class="fade-in delay-2;">歡迎您 <span id="username"></span></h3>
+                <div class="choose-group">
+                    <label class="choose fade-in delay-3">出發站：
+                        <select id="fromSelect">
+                            <option selected>台北</option>
+                            <option>板橋</option>
+                            <option>桃園</option>
+                            <option>新竹</option>
+                            <option>台中</option>
+                            <option>嘉義</option>
+                            <option>台南</option>
+                            <option>高雄</option>
+                        </select>
+                    </label>
+                    <label class="choose fade-in delay-3">目的地：
+                        <select id="toSelect">
+                            <option selected>台北</option>
+                            <option>板橋</option>
+                            <option>桃園</option>
+                            <option>新竹</option>
+                            <option>台中</option>
+                            <option>嘉義</option>
+                            <option>台南</option>
+                            <option>高雄</option>
+                        </select>
+                    </label>
+                    <label class="choose fade-in delay-3">日期：
+                        <input type="date" id="dateInput">
+                    </label>
+                    <label class="choose fade-in delay-3">起始時間：
+                        <input type="time" id="timeInput">
+                    </label>
+                </div>
+                <button onclick="querySchedule()">查詢車次</button>
+                <button onclick="cancelTicket()">我的車票</button>
+                <button onclick="logout();scrollToTop()">登出</button>
+            </div>
+            <div id="result"></div>
+            <div id="adminPanel" style="display:none"></div>
+            <canvas style="display:none" id="ticketCanvas" width="400" height="180"
+                style="border:1px solid #ccc; display:none; margin-top:20px;"></canvas>
+            <div class="particles"></div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    </main>
+
+    <section class="slogan">
+        <blockquote
+            cite="https://www.railway.gov.tw/tra-tip-web/adr/AdrI190/AdrI190/view?grandParentTitle=1&parentTitle=3">
+            "透過現代化經營，落實安全管理、提升服務效能及準點率"<br>"提供優質大眾運輸服務，同時創造利潤，成為永續之企業"</blockquote>
+    </section>
+
+    <footer>
+        <p>本網頁用於中原大學電資學院學士班學習使用_CYCU_EECS</p>
+    </footer>
+</body>
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+</html>
