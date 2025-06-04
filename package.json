@@ -1,14 +1,14 @@
 {
   "name": "eecs-ticketing-system",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "由力行114開發/2025/6/4",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yi_shui",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.0",
